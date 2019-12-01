@@ -31,8 +31,6 @@ import static org.mockito.Mockito.when;
 @ActiveProfiles("test")
 public class CategoryTransactionServiceTest {
 
-    private static final ObjectMapper om = new ObjectMapper();
-
     @Mock
     private RestTemplate restTemplate;
 

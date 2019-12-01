@@ -24,8 +24,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @ActiveProfiles("test")
 public class CategoryTransactionControllerTest {
 
-    private static final ObjectMapper om = new ObjectMapper();
-
     @Autowired
     private MockMvc mockMvc;
 
