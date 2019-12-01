@@ -11,23 +11,11 @@ Write a service to implement endpoints for the following cases:
 2. Update category of an existing transaction
 3. Add a new category
 
-
-<<<<<<< HEAD
-## 1. How to run
-$ git clone https://github.com/dhramijo/api-fractal-labs.git
-$ mvn spring-boot:run
-
-************************************************
-
-Endpoints
-=======
 ## How to run
 ````
 $ git clone https://github.com/dhramijo/api-fractal-labs.git
 $ mvn spring-boot:run
 ````
-************************************************
-
 ## Endpoints
 
 There are 3 endpoints:
