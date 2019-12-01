@@ -39,7 +39,7 @@ Request
 	"transactionId": "string"
 }
 ````
-## 3. Add a new category
+### 3. Add a new category
 ````
 HTTP POST /api/v1/category
 ````
