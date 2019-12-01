@@ -21,8 +21,9 @@ $ mvn spring-boot:run
 There are 3 endpoints:
 
 ### 1. Get categorised transactions for a given category
-
+````
 HTTP GET /api/v1/{categoryId}
+````
 categoryId as a6hg1
 
 ### 2. Update category of an existing transaction
@@ -37,7 +38,7 @@ Request
 	"transactionId": "string"
 }
 ````
-### 3. Add a new category
+### 3. Add a new category (Need to confirm Fractal's Post endpoint)
 
 ````
 HTTP POST /api/v1/category
