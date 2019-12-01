@@ -1,6 +1,5 @@
 package com.fractal;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fractal.modules.CategorisedTransactions;
 import com.fractal.modules.TokenResponse;
 import com.fractal.modules.Transactions;
