@@ -13,9 +13,10 @@ Write a service to implement endpoints for the following cases:
 
 
 ## 1. How to run
+````
 $ git clone https://github.com/dhramijo/api-fractal-labs.git
 $ mvn spring-boot:run
-
+````
 ************************************************
 
 Endpoints
