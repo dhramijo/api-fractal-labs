@@ -12,14 +12,14 @@ Write a service to implement endpoints for the following cases:
 3. Add a new category
 
 
-## 1. How to run
+## How to run
 ````
 $ git clone https://github.com/dhramijo/api-fractal-labs.git
 $ mvn spring-boot:run
 ````
 ************************************************
 
-Endpoints
+## Endpoints
 There are 3 endpoints:
 
 ### 1. Get categorised transactions for a given category
