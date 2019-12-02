@@ -6,6 +6,10 @@ import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
+/**
+ * Created by jonad dhrami on 01/12/2019.
+ */
+
 @SpringBootApplication
 public class ApiFractalLabsApplication {
 

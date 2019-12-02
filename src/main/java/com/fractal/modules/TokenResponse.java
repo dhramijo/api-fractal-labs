@@ -4,6 +4,10 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
+/**
+ * Created by jonad dhrami on 01/12/2019.
+ */
+
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Data
 public class TokenResponse {

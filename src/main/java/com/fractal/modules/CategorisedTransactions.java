@@ -8,6 +8,10 @@ import lombok.Data;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Created by jonad dhrami on 01/12/2019.
+ */
+
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Data
 public class CategorisedTransactions {
