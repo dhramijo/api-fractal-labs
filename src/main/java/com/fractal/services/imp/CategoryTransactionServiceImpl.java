@@ -33,20 +33,19 @@ public class CategoryTransactionServiceImpl implements CategoryTransactionServic
 
     @Override
     public CategorisedTransactions getCategorisedTransactions(String categoryId) {
-        String token  = getToken(restTemplate);
+        String token = getToken(restTemplate);
         log.debug("token generated: " + token);
 
         if (!token.isEmpty()) {
             HttpHeaders headers = getAuthorizedHttpHeaders(token);
 
-            try{
+            try {
                 log.info("request is sending to Fractal endpoint resource");
-                ResponseEntity<CategorisedTransactions> resp = restTemplate.exchange(fractalUrl + "/categories/"
-                                + categoryId + "/transactions", HttpMethod.GET,
-                        new HttpEntity<>(null, headers), CategorisedTransactions.class);
+                ResponseEntity<CategorisedTransactions> resp = restTemplate.exchange(fractalUrl + "/categories/" + categoryId + "/transactions",
+                        HttpMethod.GET, new HttpEntity<>(null, headers), CategorisedTransactions.class);
                 return resp.getBody();
 
-            }catch (Exception exc){
+            } catch (Exception exc) {
                 log.info("selected category doesn't contain data, category=" + categoryId);
 
             }
@@ -57,20 +56,20 @@ public class CategoryTransactionServiceImpl implements CategoryTransactionServic
 
     @Override
     public boolean updateCategoryTransaction(UpdateCategoryTransaction updateCategoryTransaction) {
-        String token  = getToken(restTemplate);
+        String token = getToken(restTemplate);
         log.debug("token generated: " + token);
 
         if (!token.isEmpty()) {
             HttpHeaders headers = getAuthorizedHttpHeaders(token);
 
-            try{
+            try {
                 log.info("request is sending to Fractal endpoint resource");
                 ResponseEntity<ResponseEntity> exchange = restTemplate.exchange(fractalUrl + "/categories/",
                         HttpMethod.PUT, new HttpEntity<>(updateCategoryTransaction, headers), ResponseEntity.class);
                 return true;
 
-            }catch (Exception exc){
-                log.info("Requested category or transaction cannot be found for data=" + updateCategoryTransaction );
+            } catch (Exception exc) {
+                log.info("Requested category or transaction cannot be found for data=" + updateCategoryTransaction);
 
             }
 
@@ -80,19 +79,19 @@ public class CategoryTransactionServiceImpl implements CategoryTransactionServic
 
     @Override
     public boolean createNewCategory(Category category) {
-        String token  = getToken(restTemplate);
+        String token = getToken(restTemplate);
         log.debug("token generated: " + token);
 
         if (!token.isEmpty()) {
             HttpHeaders headers = getAuthorizedHttpHeaders(token);
 
-            try{
+            try {
                 log.info("request is sending to Fractal endpoint resource");
                 ResponseEntity<ResponseEntity> exchange = restTemplate.exchange(fractalUrl + "/categories/",
                         HttpMethod.POST, new HttpEntity<>(category, headers), ResponseEntity.class);
                 return true;
 
-            }catch (Exception exc){
+            } catch (Exception exc) {
                 log.info("Error while creating a new category");
 
             }
@@ -103,18 +102,19 @@ public class CategoryTransactionServiceImpl implements CategoryTransactionServic
 
     /**
      * gets token to access remote rest resource
+     *
      * @param restTemplate spring restTemplate for http requests
      * @return token for successfull requests empty string for error
      */
-    private String getToken(RestTemplate restTemplate){
+    private String getToken(RestTemplate restTemplate) {
         ResponseEntity<TokenResponse> res = null;
         HttpHeaders headers = getHttpHeaders(apiKey, partnerId);
         try {
             res = restTemplate.exchange(fractalUrl + "/token", HttpMethod.POST, new HttpEntity<>(null, headers), TokenResponse.class);
             return res.getBody().getAccessToken();
-        }catch (HttpClientErrorException ex){
+        } catch (HttpClientErrorException ex) {
             log.error("given api key or partner id is not valid");
-        }catch (Exception ex){
+        } catch (Exception ex) {
             log.error("there is a problem during the connection the api");
         }
         return "";
@@ -123,7 +123,8 @@ public class CategoryTransactionServiceImpl implements CategoryTransactionServic
 
     /**
      * generate http headers for rest request
-     * @param apiKey for the rest resource
+     *
+     * @param apiKey    for the rest resource
      * @param partnerId for the partner
      * @return http header generated
      */
@@ -137,6 +138,7 @@ public class CategoryTransactionServiceImpl implements CategoryTransactionServic
 
     /**
      * generate headers containing authentication information
+     *
      * @param token for the rest resource
      * @return http headers contain authentication info
      */
