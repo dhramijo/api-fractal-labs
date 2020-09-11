@@ -1,8 +1,8 @@
-# API Developer Assignment
+# Client REST API Development
 
 ## Description
 
-Write a client for the Fractal API Sandbox to read bank transactions. Categorise bank
+REST API client for the Fractal API Sandbox to read bank transactions. Categorise bank
 transactions based on the transaction description for two categories (Ex: Travel, Coffee)
 
 Write a service to implement endpoints for the following cases:
